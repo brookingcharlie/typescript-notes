@@ -1,15 +1,5 @@
-interface Person {
-  name: string;
-}
+import { Student, greeting} from './greeting';
 
-class Student {
-  constructor(public id: string, public name: string) {}
-}
+const joe: Student = new Student('S1234567', 'Joe');
 
-function greet(person: Person) {
-  console.log(`Hello, ${person.name}!`);
-}
-
-const joe: Student = { id: 'S1234567', name: 'Joe Smith' };
-
-greet(joe);
+console.log(greeting(joe));
