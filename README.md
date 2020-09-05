@@ -106,6 +106,11 @@ If you're on Mac, try running `brew reinstall watchman`
 
 ## References
 
+### Basic references
+
+* [The TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+* [Jest docs](https://jestjs.io/docs/en/getting-started)
+
 ### Using Babel instead of tsc/ts-jest
 
 See [this blog post](https://iamturns.com/typescript-babel/) for an alternative approach.
