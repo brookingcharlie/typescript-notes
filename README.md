@@ -16,11 +16,11 @@ yarn test
 
 ### How the project was created
 
-The initial node project was generated using `yarn init -p -y`.
+Generated initial node project using `yarn init -p -y`.
 
-The basic TypeScript dependency was added using `yarn add -D typescript`.
+Added TypeScript dependency using `yarn add -D typescript`.
 
-Then the following scripts were added in `package.json` to build/run:
+Added the following scripts in `package.json` to build/run:
 
 ```
 "scripts": {
@@ -29,7 +29,7 @@ Then the following scripts were added in `package.json` to build/run:
 }
 ```
 
-The TypeScript compiler was configured with this `tsconfig.json`
+Configured the TypeScript compiler with this `tsconfig.json`
 to compile from `src/` to `dist/`:
 
 ```
