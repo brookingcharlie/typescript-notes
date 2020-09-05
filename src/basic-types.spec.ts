@@ -39,6 +39,8 @@ describe('basic types', () => {
     enum ColorCustom { Red = 1, Green = 2, Blue = 4 }
     const color1: ColorDefault = ColorDefault.Blue;
     const color2: ColorCustom = ColorCustom.Green;
+    expect(color1).toBe(2);
+    expect(typeof color1).toBe('number');
     expect(ColorDefault[2]).toBe('Blue');
     expect(ColorCustom[2]).toBe('Green');
     expect(color1).toBe(color2);
