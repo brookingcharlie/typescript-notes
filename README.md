@@ -82,3 +82,11 @@ Added a `test` script to run Jest:
 
 If you're on Mac, try running `brew reinstall watchman`
 (see [jest/issues/4529](https://github.com/facebook/jest/issues/4529)).
+
+## References
+
+### Using Babel instead of tsc/ts-jest
+
+See [this blog post](https://iamturns.com/typescript-babel/) for an alternative approach.
+It advocates transpiling with babel to improve build speed and simplify the tool ecosystem,
+though it notes you should separately run the TypeScript compiler to check types.
