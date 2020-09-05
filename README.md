@@ -90,3 +90,8 @@ If you're on Mac, try running `brew reinstall watchman`
 See [this blog post](https://iamturns.com/typescript-babel/) for an alternative approach.
 It advocates transpiling with babel to improve build speed and simplify the tool ecosystem,
 though it notes you should separately run the TypeScript compiler to check types.
+
+The official TypeScript handbook also
+[notes](https://www.typescriptlang.org/docs/handbook/babel-with-typescript.html)
+that, when "you need a build pipeline with multiple potential outputs ...
+use `babel` for transpiling and `tsc` for type checking".
