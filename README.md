@@ -2,14 +2,28 @@
 
 My notes on TypeScript, written as unit tests that demonstrate features of the language.
 
+Also includes an example main program to show compilation/running.
+
 ## Usage
 
-These tests are mainly intended for reading, to understand how TypeScript works.
+The tests are mainly intended for reading, to understand how TypeScript works.
 
 To execute them, run:
 
 ```
 yarn test
+```
+
+To compile:
+
+```
+yarn build
+```
+
+To run example main program:
+
+```
+yarn start
 ```
 
 ## Maintenance notes
@@ -18,7 +32,7 @@ yarn test
 
 Generated initial node project using `yarn init -p -y`.
 
-Added TypeScript dependency using `yarn add -D typescript`.
+Added TypeScript dependency using `yarn add --dev typescript`.
 
 Added the following scripts in `package.json` to build/run:
 
@@ -29,11 +43,18 @@ Added the following scripts in `package.json` to build/run:
 }
 ```
 
+Added TypeScript's [recommended base configuration](https://github.com/tsconfig/bases#readme):
+
+```
+yarn add --dev @tsconfig/recommended
+```
+
 Configured the TypeScript compiler with this `tsconfig.json`
 to compile from `src/` to `dist/`:
 
 ```
 {
+  "extends": "@tsconfig/recommended/tsconfig.json",
   "include": [
     "./src/**/*.ts"
   ],

@@ -6,11 +6,13 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "clean": "rm -r dist",
     "build": "tsc",
     "start": "node dist/index.js",
     "test": "jest"
   },
   "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
     "@types/jest": "^26.0.13",
     "jest": "^26.4.2",
     "ts-jest": "^26.3.0",
