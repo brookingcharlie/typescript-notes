@@ -10,6 +10,6 @@ function greeting(person: Person) {
   return `Hello, ${person.name}!`;
 }
 
-const joe: Student = new Student('S1234567', 'Joe');
+const joe: Student = new Student("S1234567", "Joe");
 
 console.log(greeting(joe));

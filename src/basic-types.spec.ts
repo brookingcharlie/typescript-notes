@@ -1,10 +1,10 @@
-describe('basic types', () => {
-  it('boolean', () => {
+describe("basic types", () => {
+  it("boolean", () => {
     const isDone: boolean = false;
     expect(isDone).toBe(false);
   });
 
-  it('number', () => {
+  it("number", () => {
     const decimal: number = 78;
     const hex: number = 0x4e;
     const binary: number = 0b1001110;
@@ -15,78 +15,86 @@ describe('basic types', () => {
     expect(octal).toBe(78);
   });
 
-  it('string', () => {
-    const name: string = 'Joe';
+  it("string", () => {
+    const name: string = "Joe";
     const age: number = 65;
-    const intro = `My name's ${name} and I'm ${age}.`
+    const intro = `My name's ${name} and I'm ${age}.`;
     expect(intro).toBe("My name's Joe and I'm 65.");
   });
 
-  it('array', () => {
+  it("array", () => {
     const listBracketSyntax: number[] = [1, 2, 3];
     const listGenericSyntax: number[] = [1, 2, 3];
     expect(listBracketSyntax).toStrictEqual(listGenericSyntax);
   });
 
-  it('tuple', () => {
-    const record: [string, number] = ['Joe', 65];
-    expect(record[0]).toBe('Joe');
+  it("tuple", () => {
+    const record: [string, number] = ["Joe", 65];
+    expect(record[0]).toBe("Joe");
     expect(record[1]).toBe(65);
   });
 
-  it('enum', () => {
-    enum ColorDefault { Red, Green, Blue }
-    enum ColorCustom { Red = 1, Green = 2, Blue = 4 }
+  it("enum", () => {
+    enum ColorDefault {
+      Red,
+      Green,
+      Blue,
+    }
+    enum ColorCustom {
+      Red = 1,
+      Green = 2,
+      Blue = 4,
+    }
     const color1: ColorDefault = ColorDefault.Blue;
     const color2: ColorCustom = ColorCustom.Green;
     expect(color1).toBe(2);
-    expect(typeof color1).toBe('number');
-    expect(ColorDefault[2]).toBe('Blue');
-    expect(ColorCustom[2]).toBe('Green');
+    expect(typeof color1).toBe("number");
+    expect(ColorDefault[2]).toBe("Blue");
+    expect(ColorCustom[2]).toBe("Green");
     expect(color1).toBe(color2);
   });
 
-  it('any - no type checking', () => {
+  it("any - no type checking", () => {
     function someLibraryFunction(): any {
-      return 'testing';
+      return "testing";
     }
     const value: string = someLibraryFunction();
-    expect(value).toBe('testing');
+    expect(value).toBe("testing");
     expect(value.length).toBe(7);
   });
 
-  it('unknown - value could be anything', () => {
+  it("unknown - value could be anything", () => {
     let value: unknown = 4;
-    value = 'testing';
-    expect(value).toBe('testing');
+    value = "testing";
+    expect(value).toBe("testing");
     // TS2571: Object is of type 'unknown'.
     // expect(value.length).toBe(7);
-    expect(typeof value).toBe('string');
+    expect(typeof value).toBe("string");
   });
 
-  it('type assertions', () => {
-    let value: unknown = 'testing';
-    expect(value).toBe('testing');
+  it("type assertions", () => {
+    let value: unknown = "testing";
+    expect(value).toBe("testing");
     expect((value as string).length).toBe(7);
     expect((<string>value).length).toBe(7);
   });
 
-  it('void - no value', () => {
+  it("void - no value", () => {
     function doSomething(): void {}
     expect(doSomething()).toBeUndefined();
   });
 
-  it('never', () => {
+  it("never", () => {
     function infinite(message: string): never {
       while (true) {}
     }
     function error(message: string): never {
       throw new Error(message);
     }
-    expect(() => error('foo')).toThrow();
+    expect(() => error("foo")).toThrow();
   });
 
-  it('null and undefined', () => {
+  it("null and undefined", () => {
     // TS2322: Type 'null' is not assignable to type 'string'.
     // let required: string = null;
     // TS2322: Type 'undefined' is not assignable to type 'string | null'.
@@ -95,7 +103,7 @@ describe('basic types', () => {
     let optional2: string | undefined = undefined;
   });
 
-  it('object', () => {
+  it("object", () => {
     function create(o: object): void {}
     create({ a: 1, b: 2 });
     // TS2345: Argument of type 'null' is not assignable to parameter of type 'object'.
