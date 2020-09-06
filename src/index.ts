@@ -2,7 +2,7 @@ interface Person {
   name: string;
 }
 
-class Student {
+class Student implements Person {
   constructor(public id: string, public name: string) {}
 }
 
