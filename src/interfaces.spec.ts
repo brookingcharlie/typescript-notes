@@ -91,7 +91,8 @@ describe("interfaces", () => {
 
       prop1: string;
       prop2: number;
-      // TS2411: Property 'prop3' of type 'boolean' is not assignable to string index type 'string | number'.
+      // TS2411: Property 'prop3' of type 'boolean' is not assignable to string
+      //   index type 'string | number'.
       // prop3: boolean;
     }
 
@@ -124,7 +125,7 @@ describe("interfaces", () => {
 
   it("interfaces extending classes", () => {
     class Person {
-      constructor(public name: string) {};
+      constructor(public name: string) {}
     }
 
     interface FamiliarPerson extends Person {
