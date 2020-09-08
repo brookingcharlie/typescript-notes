@@ -116,11 +116,11 @@ describe("functions", () => {
     function greeting(id: number): string;
     function greeting(arg: any): any {
       return Array.isArray(arg)
-        ? arg.map((name) => `Hello, ${name}!`)
-        : `Hello, member ${arg}!`;
+        ? arg.map((name) => `Hi, ${name}!`)
+        : `Hi, member ${arg}!`;
     }
 
     expect(greeting(["Joe", "Lee"])).toStrictEqual(["Hi, Joe!", "Hi, Lee!"]);
-    expect(greeting(12345678)).toBe("Hello, member 12345678!");
+    expect(greeting(12345678)).toBe("Hi, member 12345678!");
   });
 });
