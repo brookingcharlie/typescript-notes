@@ -60,7 +60,7 @@ describe("basic types", () => {
       Up = "UP",
       Down = "DOWN",
       Left = "LEFT",
-      Right = "RIGHT"
+      Right = "RIGHT",
     }
     const direction: Direction = Direction.Up;
     expect(typeof direction).toBe("string");
