@@ -34,7 +34,7 @@ describe("basic types", () => {
     expect(record[1]).toBe(65);
   });
 
-  it("enum", () => {
+  it("numeric enum", () => {
     enum ColorDefault {
       Red,
       Green,
@@ -47,11 +47,26 @@ describe("basic types", () => {
     }
     const color1: ColorDefault = ColorDefault.Blue;
     const color2: ColorCustom = ColorCustom.Green;
-    expect(color1).toBe(2);
     expect(typeof color1).toBe("number");
+    expect(color1).toBe(ColorDefault.Blue);
+    expect(color1).toBe(2);
+    expect(color2).toBe(2);
     expect(ColorDefault[2]).toBe("Blue");
     expect(ColorCustom[2]).toBe("Green");
-    expect(color1).toBe(color2);
+  });
+
+  it("string enum", () => {
+    enum Direction {
+      Up = "UP",
+      Down = "DOWN",
+      Left = "LEFT",
+      Right = "RIGHT"
+    }
+    const direction: Direction = Direction.Up;
+    expect(typeof direction).toBe("string");
+    expect(direction).toBe(Direction.Up);
+    expect(direction).toBe("UP");
+    expect(Direction["Up"]).toBe(direction);
   });
 
   it("any - no type checking", () => {
