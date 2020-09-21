@@ -67,7 +67,7 @@ to compile from `src/` to `dist/`:
 ### Testing with Jest
 
 Installed [ts-jest](https://github.com/kulshekhar/ts-jest), a TypeScript
-preprocessor with source map support for Jest, using:
+preprocessor for [Jest](https://jestjs.io/), using:
 
 ```
 yarn add --dev jest ts-jest @types/jest
@@ -94,6 +94,29 @@ Added a `test` script to run Jest:
 "scripts": {
   ...,
   "test": "jest"
+}
+```
+
+### Code formatting with Prettier
+
+Added [Prettier](https://prettier.io/) dependency:
+
+```
+yarn add --dev prettier
+```
+
+Created an empty config file to let editors/tools know we're using Prettier:
+
+```
+echo '{}' > .prettierrc.json
+```
+
+Added a `format` script to run it:
+
+```
+"scripts": {
+  ...,
+  "format": "prettier --write src"
 }
 ```
 
