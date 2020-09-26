@@ -144,3 +144,12 @@ The official TypeScript handbook also
 [notes](https://www.typescriptlang.org/docs/handbook/babel-with-typescript.html)
 that, when "you need a build pipeline with multiple potential outputs ...
 use `babel` for transpiling and `tsc` for type checking".
+
+### To continually compile/run
+
+* Install: `yarn add -D nodemon`
+* To watch src/ and compile to dist/: `tsc -w`
+* To watch dist/ and run on changes: `nodemon dist/index.js`
+* To run explicitly: `node dist/index.ts`
+* To watch src/ and compile/run on changes: `nodemon --exec ts-node src/index.js`
+* To compile/run explicitly (can be slow): "ts-node src/index.ts",
